@@ -70,4 +70,9 @@ Error, no method found! For debugging hints type ?Recovery from NoMethodFound
 Error, no 2nd choice method found for `FactorSemigroup' on 2 arguments
 
 #
+gap> F := FreeGroup(2);;
+gap> Group(F.1 ^ 100);
+Group(<1 generator>)
+
+#
 gap> STOP_TEST( "grpfree.tst", 1);
