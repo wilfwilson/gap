@@ -437,20 +437,20 @@ DeclareAttribute( "RadicalOfAlgebra", IsAlgebra );
 ##  gap> A:= GroupRing( Rationals, G );
 ##  <algebra-with-one over Rationals, with 2 generators>
 ##  gap> dd:= DirectSumDecomposition( A );
-##  [ <two-sided ideal in
-##        <algebra-with-one of dimension 24 over Rationals>,
-##        (1 generator)>,
-##    <two-sided ideal in
-##        <algebra-with-one of dimension 24 over Rationals>,
-##        (1 generator)>,
-##    <two-sided ideal in
-##        <algebra-with-one of dimension 24 over Rationals>,
-##        (1 generator)>,
-##    <two-sided ideal in
-##        <algebra-with-one of dimension 24 over Rationals>,
-##        (1 generator)>,
-##    <two-sided ideal in
-##        <algebra-with-one of dimension 24 over Rationals>,
+##  [ <two-sided ideal in 
+##        <algebra-with-one of dimension 24 over Rationals>, 
+##        (1 generator)>, 
+##    <two-sided ideal in 
+##        <algebra-with-one of dimension 24 over Rationals>, 
+##        (1 generator)>, 
+##    <two-sided ideal in 
+##        <algebra-with-one of dimension 24 over Rationals>, 
+##        (1 generator)>, 
+##    <two-sided ideal in 
+##        <algebra-with-one of dimension 24 over Rationals>, 
+##        (1 generator)>, 
+##    <two-sided ideal in 
+##        <algebra-with-one of dimension 24 over Rationals>, 
 ##        (1 generator)> ]
 ##  gap> List( dd, Dimension );
 ##  [ 1, 1, 4, 9, 9 ]

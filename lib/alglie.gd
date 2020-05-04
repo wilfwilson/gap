@@ -1466,8 +1466,8 @@ DeclareAttribute( "JenningsLieAlgebra", IsGroup );
 ##  rec( hom_components := function( d ) ... end, max_degree := 3,
 ##    min_degree := 1, source := Integers )
 ##  gap> List( [1,2,3], g.hom_components );
-##  [ <vector space over GF(3), with 3 generators>,
-##    <vector space over GF(3), with 2 generators>,
+##  [ <vector space over GF(3), with 3 generators>, 
+##    <vector space over GF(3), with 2 generators>, 
 ##    <vector space over GF(3), with 1 generator> ]
 ##  ]]></Example>
 ##  </Description>

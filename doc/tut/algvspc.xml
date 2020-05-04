@@ -438,7 +438,7 @@ gap> subA:= Subalgebra( A, [ m-m^2 ] );
 gap> Dimension( subA );
 2
 gap> idA:= Ideal( A, [ m-m^3 ] );
-<two-sided ideal in <algebra of dimension 3 over Rationals>,
+<two-sided ideal in <algebra of dimension 3 over Rationals>, 
   (1 generator)>
 gap> Dimension( idA );
 2

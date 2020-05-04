@@ -2050,6 +2050,7 @@ InstallMethod( ViewObj,
     "for an algebra-with-one with known generators",
     [ IsAlgebraWithOne and HasGeneratorsOfAlgebraWithOne ],
     function( A )
+    local nrgens;
     Print( "<algebra-with-one over ", LeftActingDomain( A ), ", with ",
            Pluralize( Length( GeneratorsOfAlgebraWithOne( A ) ), "generator" ),
            ">" );
@@ -2106,6 +2107,7 @@ InstallMethod( ViewObj,
     "for a Lie algebra with known generators",
     [ IsLieAlgebra and HasGeneratorsOfAlgebra ],
     function( A )
+    local nrgens;
     Print( "<Lie algebra over ", LeftActingDomain( A ), ", with ",
            Pluralize( Length( GeneratorsOfAlgebra( A ) ), "generator" ), ">" );
 end );

@@ -76,12 +76,12 @@ DeclareAttribute("StandardGeneratorsSubringSCRing",IsSubringSCRing);
 ##  for a finite ring <A>R</A> this function returns a list of all
 ##  subrings of <A>R</A>.
 ##  <Example><![CDATA[
-##  gap> Subrings(SmallRing(8,37));
-##  [ <ring with 1 generator>, <ring with 1 generator>,
-##    <ring with 1 generator>, <ring with 1 generator>,
-##    <ring with 1 generator>, <ring with 1 generator>,
-##    <ring with 2 generators>, <ring with 2 generators>,
-##    <ring with 2 generators>, <ring with 2 generators>,
+##  gap> Subrings(SmallRing(8,37));     
+##  [ <ring with 1 generator>, <ring with 1 generator>, 
+##    <ring with 1 generator>, <ring with 1 generator>, 
+##    <ring with 1 generator>, <ring with 1 generator>, 
+##    <ring with 2 generators>, <ring with 2 generators>, 
+##    <ring with 2 generators>, <ring with 2 generators>, 
 ##    <ring with 3 generators> ]
 ##  ]]></Example>
 ##  </Description>
@@ -103,8 +103,8 @@ DeclareAttribute("Subrings",IsRing);
 ##  ideals of <A>R</A>.
 ##  <Example><![CDATA[
 ##  gap> Ideals(SmallRing(8,37));
-##  [ <ring with 1 generator>, <ring with 1 generator>,
-##    <ring with 1 generator>, <ring with 2 generators>,
+##  [ <ring with 1 generator>, <ring with 1 generator>, 
+##    <ring with 1 generator>, <ring with 2 generators>, 
 ##    <ring with 3 generators> ]
 ##  ]]></Example>
 ##  </Description>
