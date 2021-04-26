@@ -961,8 +961,9 @@ InstallMethod( ViewObj,
     "for a mutable basis of a Gaussian matrix space",
     [ IsMutableBasis and IsMutableBasisOfGaussianMatrixSpaceRep ],
     function( MB )
-    Print( "<mutable basis over ", MB!.leftActingDomain, ", ",
-           Pluralize( Length( MB!.basisVectors ), "vector" ), ">" );
+    PrintFormatted( "<mutable basis over {}, {}>",
+                    MB!.leftActingDomain,
+                    Pluralize( Length( MB!.basisVectors ), "vector" ) );
     end );
 
 

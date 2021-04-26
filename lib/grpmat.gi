@@ -734,7 +734,7 @@ local gens, nrgens;
     if HasSize(G) then
       Print(" of size ",Size(G));
     fi;
-    Print(" with ", Pluralize(nrgens, "generator"), ">");
+    PrintFormatted(" with {}>", Pluralize(nrgens, "generator"));
   else
     Print("Group(");
     ViewObj(gens);

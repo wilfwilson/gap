@@ -1881,9 +1881,9 @@ InstallMethod( ViewObj,
     "for a FLMLOR with known generators",
     [ IsFLMLOR and HasGeneratorsOfAlgebra ],
     function( A )
-    Print( "<free left module over ", LeftActingDomain( A ),
-           ", and ring, with ",
-           Pluralize( Length( GeneratorsOfFLMLOR( A ) ), "generator" ), ">" );
+    PrintFormatted( "<free left module over {}, and ring, with {}>",
+                    LeftActingDomain( A ),
+                    Pluralize( Length( GeneratorsOfFLMLOR(A) ), "generator" ) );
     end );
 
 
@@ -1937,10 +1937,10 @@ InstallMethod( ViewObj,
     "for a FLMLOR-with-one with known generators",
     [ IsFLMLORWithOne and HasGeneratorsOfFLMLORWithOne ],
     function( A )
-    Print( "<free left module over ", LeftActingDomain( A ),
-           ", and ring-with-one, with ",
-           Pluralize( Length( GeneratorsOfAlgebraWithOne( A ) ), "generator" ),
-           ">" );
+    local nrgens;
+    nrgens := Length( GeneratorsOfAlgebraWithOne( A ) );
+    PrintFormatted( "<free left module over {}, and ring-with-one, with {}>",
+                    LeftActingDomain( A ), Pluralize( nrgens, "generator" ) );
     end );
 
 
@@ -1994,8 +1994,10 @@ InstallMethod( ViewObj,
     "for an algebra with known generators",
     [ IsAlgebra and HasGeneratorsOfAlgebra ],
     function( A )
-    Print( "<algebra over ", LeftActingDomain( A ), ", with ",
-           Pluralize( Length( GeneratorsOfAlgebra( A ) ), "generator" ), ">" );
+    local nrgens;
+    nrgens := Length( GeneratorsOfAlgebra( A ) );
+    PrintFormatted( "<algebra over {}, with {}>",
+                    LeftActingDomain( A ), Pluralize( nrgens, "generator" ) );
     end );
 
 
@@ -2051,9 +2053,9 @@ InstallMethod( ViewObj,
     [ IsAlgebraWithOne and HasGeneratorsOfAlgebraWithOne ],
     function( A )
     local nrgens;
-    Print( "<algebra-with-one over ", LeftActingDomain( A ), ", with ",
-           Pluralize( Length( GeneratorsOfAlgebraWithOne( A ) ), "generator" ),
-           ">" );
+    nrgens := Length( GeneratorsOfAlgebraWithOne( A ) );
+    PrintFormatted( "<algebra-with-one over {}, with {}>",
+                    LeftActingDomain( A ), Pluralize( nrgens, "generator" ) );
     end );
 
 
@@ -2108,8 +2110,9 @@ InstallMethod( ViewObj,
     [ IsLieAlgebra and HasGeneratorsOfAlgebra ],
     function( A )
     local nrgens;
-    Print( "<Lie algebra over ", LeftActingDomain( A ), ", with ",
-           Pluralize( Length( GeneratorsOfAlgebra( A ) ), "generator" ), ">" );
+    nrgens := Length( GeneratorsOfAlgebra(A) );
+    PrintFormatted( "<Lie algebra over {}, with {}>",
+                    LeftActingDomain( A ), Pluralize( nrgens, "generator" ) );
 end );
 
 

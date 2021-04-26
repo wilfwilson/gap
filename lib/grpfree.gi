@@ -526,24 +526,28 @@ InstallMethod( ViewObj,
     "subgroup of free group",
     [ IsFreeGroup ],
 function(G)
+  local nrgens;
   if IsGroupOfFamily(G) then
-    if IsEmpty(GeneratorsOfGroup(G)) then
-      Print("<free group of rank zero>");
-    elif Length(GeneratorsOfGroup(G)) > GAPInfo.ViewLength * 10 then
-      Print("<free group with ",Length(GeneratorsOfGroup(G))," generators>");
+    nrgens := Length(GeneratorsOfGroup(G));
+    Print("<free group ");
+    if nrgens = 0 then
+      Print("of rank zero>");
+    elif nrgens > GAPInfo.ViewLength * 10 then
+      PrintFormatted("with {}>", Pluralize(nrgens, "generator"));
     else
-      Print("<free group on the generators ",GeneratorsOfGroup(G),">");
+      Print("on the generators ", GeneratorsOfGroup(G), ">");
     fi;
   else
     Print("Group(");
     if HasGeneratorsOfGroup(G) then
+      nrgens := Length(GeneratorsOfGroup(G));
       if not IsBound(G!.gensWordLengthSum) then
         G!.gensWordLengthSum:=Sum(List(GeneratorsOfGroup(G),Length));
       fi;
       if G!.gensWordLengthSum <= GAPInfo.ViewLength * 30 then
         Print(GeneratorsOfGroup(G));
       else
-        Print("<",Pluralize(Length(GeneratorsOfGroup(G)),"generator"),">");
+        PrintFormatted("<{}>", Pluralize(nrgens, "generator"));
       fi;
     else
       Print("<free, no generators known>");

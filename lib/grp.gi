@@ -4689,7 +4689,7 @@ InstallMethod( ViewString,
     if nrgens = 0 then
         return "<trivial group>";
     fi;
-    return Concatenation("<group with ", Pluralize( nrgens, "generator" ), ">");
+    return StringFormatted("<group with {}>", Pluralize( nrgens, "generator" ));
     end );
 
 InstallMethod( ViewString,
@@ -4701,6 +4701,9 @@ InstallMethod( ViewString,
     if nrgens = 0 then
         return "<trivial group>";
     fi;
+    #TODO Want to do, but StringFormatted strips control characters:
+    #return StringFormatted("<group of size {} with {}>",
+    #                       String(Size(G)), Pluralize( nrgens, "generator" ));
     return Concatenation("<group of size ", String(Size(G))," with ",
                          Pluralize(nrgens, "generator"), ">");
     end );

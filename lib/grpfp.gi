@@ -5246,20 +5246,23 @@ end);
 InstallMethod(ViewObj,"fp group",true,[IsSubgroupFpGroup],
  10,# to override the pure `Size' method
 function(G)
+  local nrgens;
   if IsFreeGroup(G) then TryNextMethod();fi;
   if IsGroupOfFamily(G) then
-    Print("<fp group");
+    Print("<fp group ");
     if HasSize(G) then
-      Print(" of size ",Size(G));
+      PrintFormatted("of size {} ", Size(G));
     fi;
-    if Length(GeneratorsOfGroup(G)) > GAPInfo.ViewLength * 10 then
-      Print(" with ",Length(GeneratorsOfGroup(G))," generators>");
+    nrgens := Length(GeneratorsOfGroup(G));
+    if nrgens > GAPInfo.ViewLength * 10 then
+      PrintFormatted("with {}>", Pluralize(nrgens, "generator"));
     else
-      Print(" on the generators ",GeneratorsOfGroup(G),">");
+      Print("on the generators ", GeneratorsOfGroup(G), ">");
     fi;
   else
     Print("Group(");
     if HasGeneratorsOfGroup(G) then
+      nrgens := Length(GeneratorsOfGroup(G));
       if not IsBound(G!.gensWordLengthSum) then
         G!.gensWordLengthSum:=Sum(List(GeneratorsOfGroup(G),
                  i->Length(UnderlyingElement(i))));
@@ -5267,7 +5270,7 @@ function(G)
       if G!.gensWordLengthSum <= GAPInfo.ViewLength * 30 then
         Print(GeneratorsOfGroup(G));
       else
-        Print("<",Pluralize(Length(GeneratorsOfGroup(G)),"generator"),">");
+        PrintFormatted("<{}>", Pluralize(nrgens, "generator"));
       fi;
     else
       Print("<fp, no generators known>");

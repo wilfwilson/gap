@@ -1630,8 +1630,9 @@ InstallMethod( ViewObj,
     "for a mutable basis of a Gaussian row space",
     [ IsMutableBasis and IsMutableBasisOfGaussianRowSpaceRep ],
     function( MB )
-    Print( "<mutable basis over ", MB!.leftActingDomain, ", ",
-           Pluralize( Length( MB!.basisVectors ), "vector" ), ">" );
+    PrintFormatted( "<mutable basis over {}, {}>",
+                    MB!.leftActingDomain,
+                    Pluralize( Length( MB!.basisVectors ), "vector" ) );
     end );
 
 

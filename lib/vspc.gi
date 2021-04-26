@@ -181,9 +181,8 @@ InstallMethod( ViewObj,
     "for vector space with known generators",
     [ IsVectorSpace and HasGeneratorsOfLeftModule ],
     function( V )
-    Print( "<vector space over ", LeftActingDomain( V ), ", with ",
-           Pluralize( Length( GeneratorsOfLeftModule( V ) ), "generator" ),
-           ">" );
+    PrintFormatted( "<vector space over {}, with {}>", LeftActingDomain( V ),
+         Pluralize( Length( GeneratorsOfLeftModule( V ) ), "generator" ) );
     end );
 
 InstallMethod( ViewObj,

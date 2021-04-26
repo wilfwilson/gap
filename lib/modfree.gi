@@ -504,9 +504,10 @@ InstallMethod( ViewObj,
     "for free left module with known generators",
     [ IsFreeLeftModule and HasGeneratorsOfLeftModule ],
     function( V )
-    Print( "<free left module over ", LeftActingDomain( V ), ", with ",
-           Pluralize( Length( GeneratorsOfLeftModule( V ) ), "generator" ),
-           ">" );
+    local nrgens;
+    nrgens := Length( GeneratorsOfLeftModule( V ) );
+    PrintFormatted( "<free left module over {}, with {}>",
+                    LeftActingDomain( V ), Pluralize( nrgens, "generator" ) );
     end );
 
 InstallMethod( ViewObj,
