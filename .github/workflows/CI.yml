@@ -235,8 +235,7 @@ jobs:
       - name: "Gather coverage data"
         run: ${{ matrix.extra }} dev/ci-gather-coverage.sh
       - name: "Upload coverage data to Codecov"
-        uses: codecov/codecov-action@v1
-        if: ${{ runner.os != 'Windows' }} # FIXME/HACK: skip this on Windows, it runs forever
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: "!./pkg/**,!./extern/**"
